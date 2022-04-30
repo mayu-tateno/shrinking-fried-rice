@@ -1,0 +1,2 @@
+module FriedRiceHelper
+end
