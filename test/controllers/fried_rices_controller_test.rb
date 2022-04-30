@@ -1,13 +1,13 @@
 require "test_helper"
 
-class FriedRiceControllerTest < ActionDispatch::IntegrationTest
+class FriedRicesControllerTest < ActionDispatch::IntegrationTest
   test "should get preparation" do
-    get fried_rice_preparation_url
+    get fried_rices_preparation_url
     assert_response :success
   end
 
   test "should get result" do
-    get fried_rice_result_url
+    get fried_rices_result_url
     assert_response :success
   end
 end
