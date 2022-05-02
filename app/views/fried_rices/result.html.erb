@@ -1,4 +1,10 @@
-<div>
-  <h1 class="font-bold text-4xl">FriedRice#result</h1>
-  <p>Find me in app/views/fried_rice/result.html.erb</p>
+<div class="container text-center text-red-700">
+  <h1 class="text-3xl font-bold my-16">温め完了！</h1>
+  <p class="text-2xl my-3"><%= @amount_evaluation %></p>
+  <p class="text-2xl my-3"><%= @warming_time_evaluation %></p>
+  <p class="text-2xl my-3">総評 <%= @general_comment %></p>
+
+  <%= link_to fried_rices_preparation_path do %>
+    <button class="bg-red-800 hover:bg-red-700 focus:ring-4 focus:ring-red-300 text-white text-lg py-2 px-4 my-4 rounded-full">もう一回温める！</button>
+  <% end %>
 </div>
