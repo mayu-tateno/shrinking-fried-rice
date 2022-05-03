@@ -20,5 +20,8 @@ module ShrinkingFriedRice
     # config.eager_load_paths << Rails.root.join("extras")
     config.i18n.default_locale = :ja
     config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.{rb,yml}').to_s]
+
+    # バリデーションエラー時のレイアウト崩れを防ぐため、field_with_errorsクラスを持つdivタグが自動的に作られないようにする
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
   end
 end
