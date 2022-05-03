@@ -1,0 +1,7 @@
+ja:
+  activemodel:
+    attributes:
+      fried_rice:
+        amount: '量'
+        minute: '分'
+        second: '秒'
