@@ -6,8 +6,9 @@ class FriedRicesController < ApplicationController
   def result
     @fried_rice = FriedRice.new(fried_rice_params)
 
+    if @fried_rice.valid?
     shrink_rate = 0.7
- warmed_fried_rice_amount = @fried_rice.amount * shrink_rate
+    warmed_fried_rice_amount = @fried_rice.amount * shrink_rate
     warming_time = @fried_rice.minute * 60 + @fried_rice.second
     ideal_warming_time = case @fried_rice.amount
                          when 0...100
@@ -41,7 +42,7 @@ class FriedRicesController < ApplicationController
     when 380...500
       @amount_evaluation = 'ちょっと量が多かったかも…'
       amount_score = 2
-    when 500..
+    when 500...800
       @amount_evaluation = '…１人前の量ではない！'
       amount_score = 1
     end
@@ -71,6 +72,9 @@ class FriedRicesController < ApplicationController
                        when 9
                          '美味！！'
                        end
+    else
+      render :preparation
+    end
   end
 
   private
