@@ -1,6 +1,7 @@
 class FriedRice
   include ActiveModel::Model
   include ActiveModel::Attributes
+  extend ActiveModel::Translation
 
   attribute :amount, :integer
   attribute :minute, :integer
