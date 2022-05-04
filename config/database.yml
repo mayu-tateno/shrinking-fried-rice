@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: shrinking_fried_rice_production
   username: shrinking_fried_rice
   password: <%= ENV["SHRINKING_FRIED_RICE_DATABASE_PASSWORD"] %>
