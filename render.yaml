@@ -1,0 +1,18 @@
+databases:
+  - name: shrinking_fried_rice
+    databaseName: shrinking_fried_rice
+    user: shrinking_fried_rice
+
+services:
+  - type: web
+    name: shrinking_fried_rice
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: shrinking_fried_rice
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
