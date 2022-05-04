@@ -7,27 +7,27 @@ class FriedRicesController < ApplicationController
     @fried_rice = FriedRice.new(fried_rice_params)
 
     if @fried_rice.valid?
-    shrink_rate = 0.7
-    warmed_fried_rice_amount = @fried_rice.amount * shrink_rate
-    warming_time = @fried_rice.minute * 60 + @fried_rice.second
-    ideal_warming_time = case @fried_rice.amount
-                         when 0...100
-                           240
-                         when 100...200
-                           270
-                         when 200...300
-                           300
-                         when 300...400
-                           330
-                         when 400...500
-                           380
-                         when 500...600
-                           410
-                         when 600...700
-                           430
-                         when 700..800
-                           470
-                         end
+      shrink_rate = 0.7
+      warmed_fried_rice_amount = @fried_rice.amount * shrink_rate
+      warming_time = @fried_rice.minute * 60 + @fried_rice.second
+      ideal_warming_time = case @fried_rice.amount
+                           when 0...100
+                             240
+                           when 100...200
+                             270
+                           when 200...300
+                             300
+                           when 300...400
+                             330
+                           when 400...500
+                             380
+                           when 500...600
+                             410
+                           when 600...700
+                             430
+                           when 700..800
+                             470
+                           end
 
     case warmed_fried_rice_amount
     when 0...200
