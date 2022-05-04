@@ -7,4 +7,8 @@
   <%= link_to fried_rices_preparation_path do %>
     <button class="bg-red-800 hover:bg-red-700 focus:ring-4 focus:ring-red-300 text-white text-lg py-2 px-4 my-4 rounded-full">もう一回温める！</button>
   <% end %>
+  <br>
+  <%= link_to "https://twitter.com/share?url=#{request.url}&text=温め結果！%0A#{@amount_evaluation}%0A#{@warming_time_evaluation}%0A#{@general_comment}%0A&hashtags=冷凍チャーハンが縮みすぎてツライ", target: '_blank' do %>
+    <button class="bg-twitterblue text-white text-lg py-2 px-4 my-4 rounded-full"><i class="fab fa-twitter"></i>シェアする</button>
+  <% end %>
 </div>

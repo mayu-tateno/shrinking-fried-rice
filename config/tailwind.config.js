@@ -12,6 +12,9 @@ module.exports = {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
         mochiypop: ['Mochiy Pop One'],
       },
+      colors: {
+        twitterblue: '#1DA1F2',
+      },
     },
   },
   plugins: [
