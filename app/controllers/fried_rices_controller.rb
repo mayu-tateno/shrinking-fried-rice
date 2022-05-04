@@ -20,13 +20,13 @@ class FriedRicesController < ApplicationController
                            when 300...400
                              330
                            when 400...500
-                             380
+                             390
                            when 500...600
-                             410
+                             420
                            when 600...700
-                             430
+                             480
                            when 700..800
-                             470
+                             540
                            end
 
     case warmed_fried_rice_amount
