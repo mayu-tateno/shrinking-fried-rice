@@ -59,8 +59,11 @@ class FriedRicesController < ApplicationController
     elsif warming_time - ideal_warming_time > 15 && warming_time - ideal_warming_time <= 30
       @warming_time_evaluation = '少し温めすぎ？'
       warming_time_score = 2
-    else
+    elsif warming_time - ideal_warming_time > 30 && warming_time - ideal_warming_time <= 60
       @warming_time_evaluation = '温めすぎてしなしな…'
+      warming_time_score = 1
+    else
+      @warming_time_evaluation = '温めすぎて水分が飛んでガリガリに硬い部分が…'
       warming_time_score = 1
     end
 
